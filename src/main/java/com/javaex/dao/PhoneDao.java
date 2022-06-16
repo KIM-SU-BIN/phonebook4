@@ -49,7 +49,7 @@ public class PhoneDao {
 		System.out.println("PhoneDao>getperson()");
 
 		PersonVo personVo = sqlSession.selectOne("phonebook.getPerson", no);
-		System.out.println("personVo");
+		//System.out.println("personVo");
 
 		return personVo;
 		// return sqlSession.selectOne("phonebook.selectPerson", no);
