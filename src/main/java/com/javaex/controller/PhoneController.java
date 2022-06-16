@@ -68,7 +68,7 @@ public class PhoneController {
 	@RequestMapping(value="/write2", method={RequestMethod.GET, RequestMethod.POST})
 	public String write2(@RequestParam("name") String name, 
 					     @RequestParam("hp") String hp,
-					     @RequestParam("company") String company) {
+					    @RequestParam("company") String company) {
 		
 		System.out.println("PhoneController>write2()");
 		

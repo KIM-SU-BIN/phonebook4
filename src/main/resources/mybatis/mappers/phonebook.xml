@@ -12,7 +12,7 @@
 			from person
 			order by person_id desc
 		]]>
-		
+
 	</select>
 
 
@@ -30,12 +30,13 @@
 			delete from person
 			where person_id = #{personId}
 		]]>
-		
+
 	</delete>
-	
+
 
 	<!-- 1명 정보 가져오기(회원정보 폼) -->
-	<select id="getPerson" parameterType="int" resultType="com.javaex.vo.PersonVo">
+	<select id="getPerson" parameterType="int"
+		resultType="com.javaex.vo.PersonVo">
 		<![CDATA[
 			select person_id personId,
 					name,
@@ -45,9 +46,22 @@
 			where person_id = #{no}
 		]]>
 	</select>
-	
-	
-	
 
-	
+	<!-- 수정 -->
+	<update id="personUpdate" parameterType="com.javaex.vo.PersonVo">
+	<![CDATA[
+		update person
+		set name = #{name},
+			hp = #{hp},
+			company = #{company}
+		where person_id = #{personId}
+			
+		]]>
+
+
+	</update>
+
+
+
+
 </mapper>
