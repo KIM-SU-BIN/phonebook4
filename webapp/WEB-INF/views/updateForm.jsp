@@ -16,10 +16,10 @@
 
 
 	<form action="./update" method="get">
-		이름(name) <input type="text" name="name" value="${personVo.name}"> <br>
-		핸드폰(hp) <input type="text" name="hp" value="${personVo.hp}"> <br>
-		회사(company) <input type="text" name="company" value="${personVo.company}"> <br>
-		pk(personId) <input type="text" name="personId" value="${personVo.personId}"> <br>
+		이름(name) <input type="text" name="name" value=""> <br>
+		핸드폰(hp) <input type="text" name="hp" value=""> <br>
+		회사(company) <input type="text" name="company" value=""> <br>
+		pk(personId) <input type="text" name="personId" value=""> <br>
 		<button type="submit">수정</button>
 	</form>
 

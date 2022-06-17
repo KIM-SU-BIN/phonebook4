@@ -16,7 +16,16 @@
 	</select>
 
 
-	<insert id="personInsert">
+
+
+
+
+
+
+	<!-- ============================================================================== -->
+
+	<!-- 전화번호 저장 -->
+	<insert id="personInsert" parameterType="com.javaex.vo.PersonVo">
 		<![CDATA[
 			insert into person
 			values (seq_person_id.nextval, #{name}, #{hp}, #{company})
@@ -24,7 +33,21 @@
 
 	</insert>
 
+	<!-- 전화번호 저장2 / 타입이 map인 경우 name이 key로 바뀜 -->
+	<insert id="personInsert2" parameterType="map">
+		<![CDATA[
+			insert into person
+			values (seq_person_id.nextval, #{name}, #{hp}, #{company})
+		]]>
 
+
+	</insert>
+
+	<!-- ============================================================================== -->
+
+
+
+	
 	<delete id="personDelete" parameterType="int">
 		<![CDATA[
 			delete from person
@@ -33,6 +56,10 @@
 
 	</delete>
 
+
+
+
+	<!-- ============================================================================== -->
 
 	<!-- 1명 정보 가져오기(회원정보 폼) -->
 	<select id="getPerson" parameterType="int"
@@ -46,6 +73,23 @@
 			where person_id = #{no}
 		]]>
 	</select>
+
+	<!-- 1명 정보 가져오기(회원정보 폼)2 -->
+	<select id="getPerson2" parameterType="int" resultType="map">
+		<![CDATA[
+			select person_id personId,
+					name,
+					hp,
+					company
+			from person
+			where person_id = #{no}
+		]]>
+	</select>
+
+	<!-- ============================================================================== -->
+
+
+
 
 	<!-- 수정 -->
 	<update id="personUpdate" parameterType="com.javaex.vo.PersonVo">
